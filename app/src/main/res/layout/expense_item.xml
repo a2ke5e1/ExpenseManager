@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_margin="8dp"
+    style="@style/Widget.Material3.CardView.Elevated"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+   <androidx.appcompat.widget.LinearLayoutCompat
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:padding="8dp"
+       >
+
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/expense_title"
+           tools:text="Expense Name"
+           />
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/expense_amount"
+           tools:text="Expense Amount"
+           />
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/expense_date"
+           tools:text="Expense Date"
+           />
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/expense_category"
+           tools:text="Expense Category"
+           />
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/expense_note"
+           tools:text="Expense Note"
+           />
+
+   </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</com.google.android.material.card.MaterialCardView>
