@@ -1,5 +1,6 @@
 package com.a2k.expensemanager
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
@@ -35,23 +36,23 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.addExpense.setOnClickListener {
-            expenseViewModel.addExpense(
-                Expense(
-                    "Test",
-                    Random.nextDouble(10.0, 1000.0),
-                    Timestamp(
-                        System.currentTimeMillis() / 1000,
-                        0
-                    ),
-                    "Test",
-                    "Test"
-                )
-            )
+            val intent = Intent(this, EditActivity::class.java)
+            intent.putExtra("isEdit", false)
+            startActivity(intent)
         }
 
         adapter = ExpenseAdapter(
             onExpenseClick = {
-                Log.d(TAG, "onCreate: $it")
+                val intent = Intent(this, EditActivity::class.java)
+                intent.putExtra("isEdit", true)
+                intent.putExtra("expense_id", it.id)
+                intent.putExtra("expense_title", it.title)
+                intent.putExtra("expense_amount", it.amount)
+                intent.putExtra("expense_date", it.date?.seconds)
+                intent.putExtra("expense_category", it.category)
+                intent.putExtra("expense_note", it.note)
+                startActivity(intent)
+                adapter.notifyDataSetChanged()
             },
             onExpenseLongPress = {
                 expenseViewModel.deleteExpense(it)

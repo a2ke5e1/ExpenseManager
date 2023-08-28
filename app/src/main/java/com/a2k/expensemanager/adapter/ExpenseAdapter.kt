@@ -1,5 +1,6 @@
 package com.a2k.expensemanager.com.a2k.expensemanager.adapter
 
+import android.text.format.DateFormat
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -32,7 +33,7 @@ class ExpenseAdapter(
         val binding = holder.binding
         binding.expenseTitle.text = currentExpense.title.toString()
         binding.expenseAmount.text = currentExpense.amount.toString()
-        binding.expenseDate.text = currentExpense.date.toString()
+        binding.expenseDate.text =  DateFormat.getDateFormat(binding.root.context).format(currentExpense.date?.toDate())
         binding.expenseCategory.text = currentExpense.category.toString()
         binding.expenseNote.text = currentExpense.note.toString()
 

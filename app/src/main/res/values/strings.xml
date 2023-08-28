@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Expense Manager</string>
+    <string name="date_hint">Date</string>
+    <string name="category_hint">Category\n</string>
+    <string name="note_hint">Note</string>
+    <string name="title">Title</string>
+    <string name="amount">Amount</string>
 </resources>
